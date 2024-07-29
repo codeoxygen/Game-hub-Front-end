@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -18,15 +19,15 @@ const App: React.FC = () => {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      <div className="grid grid-cols-1 lg:grid-cols-4">
-        <div className="col-span-1 p-4 lg:col-span-4">
+      <div className="grid grid-cols-1 lg:grid-cols-10">
+        <div className="col-span-1 p-4 lg:col-span-10">
           <NavBar DarkModeHandler={DarkModeHandler} />
         </div>
-        <div className="hidden col-span-1 p-4 bg-green-500 dark:bg-green-900 lg:block lg:col-span-2">
+        <div className="hidden col-span-1 p-4 lg:block lg:col-span-1 dark:text-white">
           Aside
         </div>
-        <div className="col-span-1 p-4 bg-blue-500 dark:bg-blue-900 lg:col-span-2">
-          Main
+        <div className="col-span-1 p-4 lg:col-span-9 dark:text-white">
+        <GameGrid/>
         </div>
       </div>
     </div>
